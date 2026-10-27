@@ -1,0 +1,35 @@
+<header class="hero">
+  <img src="images/hero.jpg" alt="View of Egypt" />
+  <div class="hero-text">
+    <h1>{{ title }}</h1>
+    <p>{{ intro }}</p>
+  </div>
+</header>
+
+<main class="container">
+  <section>
+    <h2>Top Destinations</h2>
+    <div class="grid">
+      @for (place of destinations; track place.name) {
+        <article class="card">
+          <img [src]="place.image" [alt]="place.name" />
+          <h3>{{ place.name }}</h3>
+          <p>{{ place.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="facts">
+    <h2>Quick Facts</h2>
+    <ul>
+      @for (fact of facts; track fact) {
+        <li>{{ fact }}</li>
+      }
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; {{ year }} Discover Egypt. Static content only.</p>
+</footer>
